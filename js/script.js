@@ -156,3 +156,4 @@ $(document).ready(function () {
         loadNews();
     }, 30000); // 30 saniyədən bir yenilənmə
 });
+
