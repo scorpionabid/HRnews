@@ -1,50 +1,6 @@
-<!DOCTYPE html>
-<html lang="az" class="scroll-smooth">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="HR xəbərləri, Azərbaycan HR-ları və şirkətləri barədə məlumatlar">
-    <meta name="keywords" content="HR, insan resursları, iş dünyası, Azərbaycan, xəbərlər">
-    <meta name="author" content="HR Institute">
-    <title>HR News</title>
+{% extends 'base.html' %}
 
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-</head>
-
-<body>
-    <header class="bg-danger text-white p-3 text-center">
-        <h1 class="m-0">HR News</h1>
-        <p>Ən son Azərbaycan HR xəbərləri və şirkət yenilikləri</p>
-    </header>
-
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand" href="#">HR News</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#">Ana səhifə</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Kateqoriyalar</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Təlimlər</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Əlaqə</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
+{% block content %}
     <main class="container">
         <h1 class="text-center mb-4">Bizimlə Əlaqə</h1>
         <div class="row">
@@ -86,8 +42,4 @@
             </div>
         </div>
     </main>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
-
+{% endblock %}
