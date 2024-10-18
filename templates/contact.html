@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <main class="container">
+        <h1 class="text-center mb-4">Bizimlə Əlaqə</h1>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="contact-form">
+                    <h2 class="form-heading">Əlaqə Formu</h2>
+                    <form action="#" method="POST">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Adınız</label>
+                            <input type="text" class="form-control" id="name" placeholder="Adınızı daxil edin" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email Ünvanınız</label>
+                            <input type="email" class="form-control" id="email" placeholder="Email adresinizi daxil edin" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="subject" class="form-label">Mövzu</label>
+                            <input type="text" class="form-control" id="subject" placeholder="Mövzunu daxil edin" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Mesajınız</label>
+                            <textarea class="form-control" id="message" rows="5" placeholder="Mesajınızı daxil edin" required></textarea>
+                        </div>
+                        <button type="submit" class="btn submit-btn w-100">Göndər</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="contact-info">
+                    <h5>Əlaqə Məlumatları</h5>
+                    <p><strong>Ünvan:</strong> XYZ küçəsi, Bakı, Azərbaycan</p>
+                    <p><strong>Email:</strong> info@hrnews.az</p>
+                    <p><strong>Telefon:</strong> +994 (50) 123-45-67</p>
+
+                    <h5>Xəritədə Tapın</h5>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3038.7274531892436!2d49.83101311568914!3d40.40926136450086!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40307d10069b69cf%3A0xf5310954b6886370!2sBaku%2C%20Azerbaijan!5e0!3m2!1sen!2sus!4v1634036855833!5m2!1sen!2sus" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock %}

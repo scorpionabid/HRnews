@@ -1,0 +1,15 @@
+{% load static %}
+
+<div class="col-md-4">
+    <div class="card mb-4">
+        <a href="{% url 'xeber_detail' xeber.slug %}">
+            <img src="{{ xeber.image.url }}" class="card-img-top" alt="Xəbər Şəkli">
+        </a>
+        <div class="card-body">
+            <h5 class="overlay-title">{{ xeber.basliq|truncatewords:10 }}</h5>
+            <p class="card-text">{{ xeber.text|safe|truncatewords:20 }}</p>
+            <p class="card-text"><small class="text-muted">{{ xeber.xeber_data }}</small></p>
+            <a href="{% url 'xeber_detail' xeber.slug %}" class="btn btn-primary">Davamını Oxu</a>
+        </div>
+    </div>
+</div>

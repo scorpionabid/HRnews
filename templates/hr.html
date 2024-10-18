@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+
+
+
+    <!-- Main Content Section -->
+    <main class="container my-5">
+        <!-- Latest News Section -->
+        
+    
+        <!-- Most Read Section -->
+        <section id="most-read" class="my-5">
+            <h2 class="mb-4">{{ selected_category.name|title }}</h2>
+            <div class="row">
+                {% for xeber in xebers %}
+                     {% include "hisse/_xeber.html" %}
+                {% endfor %}
+            </div>
+        </section>
+
+    
+    </main>
+{% endblock %}

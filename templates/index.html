@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <!-- Main Content Section -->
+    <main class="container my-5">     
+        <section id="latest-news">
+            <div class="row">    
+                <div class="col-md-8">
+                    <div class="card mb-4">
+                        <a href="{% url 'xeber_detail' latest_news.slug %}">
+                            <img src="{{ latest_news.image.url }}" class="card-img-top" alt="Xəbər Şəkli">
+                        </a>  
+                        <div class="card-body">
+                            <h5 class="overlay-title">{{ latest_news.basliq|truncatewords:10 }}</h5>  
+                            <p class="card-text">{{ latest_news.short_description }}</p>  
+                            <p class="card-text"><small class="text-muted">{{ latest_news.xeber_data }}</small></p>  
+                            <a href="{% url 'xeber_detail' latest_news.slug %}" class="btn btn-primary">Davamını Oxu</a>  
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    {% for news in next_news %}
+                        <div class="card mb-3">
+                            <a href="{% url 'xeber_detail' news.slug %}">
+                                <img src="{{ news.image.url }}" class="card-img-top" alt="Xəbər Şəkli">
+                            </a> 
+                            <div class="card-body">
+                                <h6 class="overlay-title">{{ news.basliq|truncatewords:10 }}</h6> 
+                                <p class="card-text"><small class="text-muted">{{ news.xeber_data }}</small></p>
+                            </div>
+                        </div>    
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+    
+
+        <section id="category-news" class="my-5">
+            {% for category, news_list in category_news_dict.items %}
+                {% if news_list %}
+                    <h3 class="text-center font-weight-bold">{{ category.name|title }} Xəbərləri</h3>
+                    <div class="row">
+                        {% for news in news_list %}
+                            <div class="col-md-4 mb-4"> 
+                                <div class="card position-relative">
+                                    <a href="{% url 'xeber_detail' news.slug %}">
+                                        <img src="{{ news.image.url }}" class="card-img-top" alt="Xəbər Şəkli">
+                                    </a>
+                                    <div class="card-body">
+                                        <h5 class="overlay-title">{{ news.basliq|truncatewords:10 }}</h5>
+                                        <p class="card-text">{{ news.text|safe|truncatewords:20 }}</p>
+                                        <a href="{% url 'xeber_detail' news.slug %}" class="btn btn-primary">Davamını Oxu</a>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                    <div class="mb-5"></div> 
+                {% endif %}
+            {% empty %}
+                <p>Kateqoriya yoxdur.</p>
+            {% endfor %}
+        </section>
+    </main>
+
+    <style>
+        .overlay-title {
+            font-size: 1.25rem; 
+            font-weight: normal; 
+            color: #333; 
+        }
+    </style>
+
+{% endblock %}
