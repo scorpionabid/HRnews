@@ -9,7 +9,7 @@
                 <div class="col-md-8">
                     <div class="card mb-4">
                         <a href="{% url 'xeber_detail' latest_news.slug %}">
-                            <img src="{{ latest_news.image.url }}" class="card-img-top" alt="Xəbər Şəkli">
+                            <img src="{{ latest_news.image.url }}" class="card-img-top custom-img" alt="Xəbər Şəkli">
                         </a>  
                         <div class="card-body">
                             <h5 class="overlay-title">{{ latest_news.basliq|truncatewords:10 }}</h5>  

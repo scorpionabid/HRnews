@@ -133,6 +133,14 @@ a:hover {
 #news-container .col-md-6 {
   margin-bottom: 30px;
 }
+.custom-img {
+  width: 100%;
+  height: 520px;
+  object-fit: contain; /* Şəkilin tam şəkildə görünməsi üçün contain istifadə edirik */
+  max-width: 800px;
+  background-color: #f4f4f4; /* Boş yerlər üçün fon rəngi */
+}
+
 
 /* Sidebar - Older News */
 /* .sidebar-news .card {
@@ -188,6 +196,27 @@ footer a:hover {
   color: #fff;
 }
 
+/* sosial media icons */
+.social-share {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.2em;
+}
+
+.social-share a {
+  color: #333;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.social-share a:hover {
+  color: #007bff; /* Bootstrap əsas rəng */
+}
+
+.social-share i {
+  margin-right: 5px;
+}
 
 
 /* Responsiveness */
