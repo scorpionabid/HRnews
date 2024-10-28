@@ -2,6 +2,10 @@ from django.shortcuts import render
 from homepage.models import Xeber, Category
 from django.shortcuts import get_object_or_404
 
+import requests
+from django.shortcuts import render
+from datetime import datetime
+
 # Create your views here.
 
 
@@ -65,4 +69,31 @@ def category_detali(request, slug):
     }
     return render(request, "hr.html", context)
 
+#scrolling news
+# views.py
 
+def index(request):
+    latest_news = Xeber.objects.filter(ana_sayfa=True).order_by('-xeber_data').first()
+    
+    if latest_news:
+        next_news = Xeber.objects.filter(ana_sayfa=True, xeber_data__lt=latest_news.xeber_data).order_by('-xeber_data')[:3]
+    else:
+        next_news = Xeber.objects.filter(ana_sayfa=True).order_by('-xeber_data')[:3]
+
+    categories = Category.objects.all()
+    category_news_dict = {
+        category: Xeber.objects.filter(category=category, ana_sayfa=True).order_by('-xeber_data')[:6]
+        for category in categories
+    }
+
+    # Marquee üçün son 5 xəbəri çəkin
+    marquee_news = Xeber.objects.order_by('-xeber_data')[:5]
+
+    context = {
+        "latest_news": latest_news,
+        "next_news": next_news,
+        "categories": categories,
+        "category_news_dict": category_news_dict,
+        "marquee_news": marquee_news,  # Marquee üçün xəbərləri göndər
+    }
+    return render(request, "index.html", context)

@@ -140,7 +140,69 @@ a:hover {
   max-width: 800px;
   background-color: #f4f4f4; /* Boş yerlər üçün fon rəngi */
 }
+/*scrolling text*/
+.scrolling-news {
+  background-color: #fc5f5f;
+  padding: 8px 0;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 1.1em;
+  color: #333;
+  border-bottom: 1px solid #ddd;
+}
 
+.scrolling-news p {
+  display: inline-block;
+  padding-left: 100%;
+  animation: scroll-left 45s linear infinite;
+  animation-delay: 2s;
+}
+
+.scrolling-news a {
+  color: #333;
+  text-decoration: none;
+}
+
+.scrolling-news a:hover {
+  color: #007bff;
+  text-decoration: underline;
+}
+
+@keyframes scroll-left {
+  0% {
+      transform: translateX(100%);
+  }
+  100% {
+      transform: translateX(-100%);
+  }
+}
+/*latest news image*/
+#latest-news img {
+  width: 100%; /* Genişlik tam konteynerə uyğun */
+  height: auto; /* Hündürlük şəkilin nisbətini qoruyur */
+  object-fit: cover; /* Şəkili konteynerin ölçüsünə uyğunlaşdırır */
+}
+
+/* Mobil cihazlar üçün xüsusi ayarlar */
+@media (max-width: 768px) {
+  #latest-news img {
+      height: 200px; /* Hündürlüyü azaltmaq üçün */
+      object-fit: cover; /* Konteynerə uyğunlaşdırmaq üçün */
+  }
+
+  /* Konteyner içindəki boşluqları azalt */
+  .container.my-5 {
+      padding-top: 10px; /* Yuxarı boşluğu azaldır */
+      padding-bottom: 10px; /* Aşağı boşluğu azaldır */
+      margin-top: 0; /* Yuxarı margin boşluğu */
+      margin-bottom: 0; /* Aşağı margin boşluğu */
+  }
+
+  /* Kart komponenti boşluğunu azalt */
+  .card.mb-4 {
+      margin-bottom: 15px;
+  }
+}
 
 /* Sidebar - Older News */
 /* .sidebar-news .card {

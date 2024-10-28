@@ -59,7 +59,14 @@
         </div>
     </nav>
     <!-- Navbar End -->
-    
+    <!-- Marquee Text (Scrolling News) -->
+    <div class="scrolling-news">
+        <p>
+            {% for news in marquee_news %}
+                <a href="{% url 'xeber_detail' news.slug %}">{{ news.basliq }}</a> | 
+            {% endfor %}
+        </p>
+    </div>
     <!-- Main Content Section -->
         {% block content %}{% endblock %}
     

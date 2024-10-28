@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container text-center my-5">
+    <h1>404</h1>
+    <h2>Səhifə Tapılmadı</h2>
+    <p>Axtardığınız səhifə mövcud deyil. Lütfən, ünvanı yoxlayın və yenidən cəhd edin.</p>
+    <a href="{% url 'home' %}" class="btn btn-primary mt-3">Ana Səhifəyə Qayıt</a>
+</div>
+{% endblock %}
